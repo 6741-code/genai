@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from google.cloud import secretmanager
+from google.cloud import aiplatform
 import google.generativeai as genai
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Path to your service account key file
-SERVICE_ACCOUNT_FILE = "genAI.json"
+SERVICE_ACCOUNT_FILE = "kajal.json"
 
 # Set the environment variable for Google credentials
 import os
@@ -15,7 +16,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = SERVICE_ACCOUNT_FILE
 
 # Replace with your secret name and project ID
 SECRET_NAME = "GenAI"
-PROJECT_ID = "project897927-429912"
+PROJECT_ID = "cbd3354-423517"
 
 def get_api_key_from_secret_manager(secret_name, project_id):
     client = secretmanager.SecretManagerServiceClient()
