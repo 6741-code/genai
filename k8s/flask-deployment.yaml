@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask
-        image: gcr.io/project897927-429912/flask:latest
+        image: gcr.io/cbd3354-423517/ui:latest
         ports:
         - containerPort: 5000
